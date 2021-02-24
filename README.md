@@ -1,16 +1,13 @@
-# changhangtong
-vue.js+node.js毕业设计 -----
-## 线上演示
-http://www.guoang.xyz/changhangtong<br>
-http://www.guoang.xyz/changhangtong/admin
+# Campus-information-release-platform
 
+vue.js+node.js毕业设计 -----
 
 # 简介
+
   前端vue后端node的express框架数据库mysql。主要涵盖：校园信息交流平台（二手信息，交流问答，新闻文章，校内活动，招聘信息）评论 ，内容审核，实名认证，消息通知，移动端适配
 
-
-
 # 运行
+
  * 1.安装node环境（百度）
  * 2.导入数据库
    + 数据库文件/数据库   
