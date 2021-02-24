@@ -1,31 +1,29 @@
-# changhangtong
+# 校园信息发布平台
+
 vue.js+node.js毕业设计 -----
-## 线上演示
-http://www.guoang.xyz/changhangtong<br>
-http://www.guoang.xyz/changhangtong/admin
 
+## 简介
 
-# 简介
   前端vue后端node的express框架数据库mysql。主要涵盖：校园信息交流平台（二手信息，交流问答，新闻文章，校内活动，招聘信息）评论 ，内容审核，实名认证，消息通知，移动端适配
 
+## 运行
 
-
-# 运行
  * 1.安装node环境（百度）
  * 2.导入数据库
-   + 数据库文件/数据库   
+   + 数据库文件/数据库
    + 数据库配置文件/server/plugins/DataBase.ini.js
  * 3.分别在/admin；/server/；/web下面执行命令
 
 ```
 npm i
-``` 
+```
  * 4.分别在/admin；/server/；/web下面执行命令
 ```
 npm run serve
 ```
 
-# 主要功能模块
+## 主要功能模块
+
 - 前台
   * 问答
   * 活动
@@ -37,22 +35,22 @@ npm run serve
     + 个人中心
      * 问答
        *  发布
-        * 管理 
+        * 管理
       * 活动
          *  发布
-        * 管理 
+        * 管理
      * 失物认领
         *  发布
-        * 管理 
+        * 管理
     * 二手交易
            *  发布
-        * 管理 
+        * 管理
      * 招聘信息
         *  发布
-        * 管理 
+        * 管理
     *   文章与新闻
         *  发布
-        * 管理 
+        * 管理
  * 后台
      * 数据中心
      * 审核中心
@@ -67,9 +65,9 @@ npm run serve
      * 账号管理
              账号添加/删除/授权/
 
-# 前台   
+# 前台
 ## 前台-首页
-<img  src="./tu/qt-sy.png"> 
+<img  src="./tu/qt-sy.png">
 
 ## 前台-功能模块
 |                                                                                     |                                           |
@@ -80,14 +78,14 @@ npm run serve
 | ----------- | --------------- |
 | ![](./tu/qt-wd-list.png)   招聘列表核                                                       | ![](./tu/qt-wz-list.png) 文章列表         |
 ## 前台-个人中心
-<img  src="./tu/qt-grzx.png">  
+<img  src="./tu/qt-grzx.png">
 
-# 后台   
+# 后台
 ## 后台-首页
-<img  src="./tu/ht-shouye.png">   
+<img  src="./tu/ht-shouye.png">
 
 ## 后台-个人中心
-<img  src="./tu/ht-gerenzhongxin.png"> 
+<img  src="./tu/ht-gerenzhongxin.png">
 
 ## 后台-审核中心
 |                                                                                     |                                           |
@@ -95,7 +93,7 @@ npm run serve
 | ![](./tu/ht-shenhezhongxin1.png)   内容审核                                                       | ![](./tu/ht-shenhezhongxin2.png) 评论审核          |
 
 
- 
+
 
 ## 后台-用户中心
 
