@@ -29,7 +29,7 @@ exports.registered = async (req, res) => {
     } else {
         let time = Date.now() - 8 * 60 * 60
         let info = {
-            user_id: uuid.v1(),   //用户id 
+            user_id: uuid.v1(),   //用户id
             username: req.body.username,//用户名
             password: req.body.password,//密码
             user_createtime: time,//创建时间
@@ -128,7 +128,6 @@ exports.getusernumbering = async (req, res) => {
             activity:activity[0].count,
             oldstuff:oldstuff[0].count,
             job:job[0].count,
-
         }
 
     }
@@ -204,7 +203,7 @@ exports.updatauser = async (req, res) => {
 
     res.send(data)
 }
-//图片上传  
+//图片上传
 exports.uplod = (req, res) => {
     const file = req.file
     // file.url = `http://oss.guoang.xyz/${file.filename}`
@@ -214,25 +213,25 @@ exports.uplod = (req, res) => {
 }
 /**
  * 互助相关
- * 
+ *
  */
 //创建求助
 exports.createhelp = async (req, res) => {
     let data
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        help_id: uuid.v1(),   //互助id 
-        user_id: req.user.uid,//  用户di 
-        help_title: req.body.help_title,// 标题   
+        help_id: uuid.v1(),   //互助id
+        user_id: req.user.uid,//  用户di
+        help_title: req.body.help_title,// 标题
         help_lable: req.body.help_lable,// 分类
         help_tag: req.body.help_tag,// 分类
-        help_content: req.body.help_content,//内容  
+        help_content: req.body.help_content,//内容
         help_img: req.body.help_img,//图片
         createtime: time,//创建时间
         updatetime: time,//更新时间
-        help_favour_num: 0,//点赞数    
+        help_favour_num: 0,//点赞数
         help_read_num: 0,//浏览量
-        help_state: 0, //状态  
+        help_state: 0, //状态
         help_istop: 0,//是否置顶
         ispublic: 0,//是否显示
     }
@@ -346,9 +345,9 @@ exports.deletehelp = async (req, res) => {
     res.send(data)
 }
 /**
- * 
+ *
  * 活动相关
- * 
+ *
  */
 
 //创建活动
@@ -356,12 +355,12 @@ exports.createactivity = async (req, res) => {
     // console.log(req)
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        activity_id: uuid.v1(),   //活动id 
-        user_id: req.user.uid,//  用户di 
-        activity_title: req.body.activity_title,// 标题   
+        activity_id: uuid.v1(),   //活动id
+        user_id: req.user.uid,//  用户di
+        activity_title: req.body.activity_title,// 标题
         activity_lable: req.body.activity_lable,// 标签
         activity_type: req.body.activity_type,// 类型
-        activity_content: req.body.activity_content,//内容  
+        activity_content: req.body.activity_content,//内容
         activity_locale: req.body.activity_locale,//地点
         activity_impose: req.body.activity_impose,//是否限制人数
         createtime: time,//创建时间
@@ -369,9 +368,9 @@ exports.createactivity = async (req, res) => {
         activity_statetime: req.body.activity_statetime,//活动开始时间
         activity_endtime: req.body.activity_endtime,//活动结束时间
         updatetime: time,//更新时间
-        activity_favour_num: 0,//点赞数    
+        activity_favour_num: 0,//点赞数
         activity_read_num: 0,//浏览量
-        activity_state: 0, //状态  
+        activity_state: 0, //状态
         activity_istop: 0,//是否置顶
         ispublic: 0,//是否显示
     }
@@ -532,19 +531,19 @@ exports.getwebjoinslist = async (req, res) => {
 exports.createoldstuff = async (req, res) => {
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        oldstuff_id: uuid.v1(),   //二手id 
-        user_id: req.user.uid,//  用户di 
-        oldstuff_img: req.body.oldstuff_img,// 标题   
+        oldstuff_id: uuid.v1(),   //二手id
+        user_id: req.user.uid,//  用户di
+        oldstuff_img: req.body.oldstuff_img,// 标题
         oldstuff_name: req.body.oldstuff_name,// 标签
         oldstuff_lable: req.body.oldstuff_lable,// 类型
-        oldstuff_price: req.body.oldstuff_price,//内容  
+        oldstuff_price: req.body.oldstuff_price,//内容
 
-        oldstuff_content: req.body.oldstuff_content,//内容  
+        oldstuff_content: req.body.oldstuff_content,//内容
         createtime: time,//创建时间
         updatetime: time,//更新时间
-        oldstuff_favour_num: 0,//点赞数    
+        oldstuff_favour_num: 0,//点赞数
         oldstuff_read_num: 0,//浏览量
-        oldstuff_state: 0, //状态  
+        oldstuff_state: 0, //状态
         oldstuff_istop: 0,//是否置顶
         ispublic: 0,//是否显示
     }
@@ -668,19 +667,19 @@ exports.changewebcompany = async (req, res) => {
 exports.createjob = async (req, res) => {
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        job_id: uuid.v1(),   //id 
-        user_id: req.user.uid,//  用户di 
+        job_id: uuid.v1(),   //id
+        user_id: req.user.uid,//  用户di
         company_id: req.body.company_id,
-        job_name: req.body.job_name,// 岗位铭恒   
+        job_name: req.body.job_name,// 岗位铭恒
         job_salary: req.body.job_salary,// 薪资
-        job_num: req.body.job_num,//人数 
+        job_num: req.body.job_num,//人数
         job_lable: req.body.job_lable,//类型
-        job_content: req.body.job_content,//内容  
+        job_content: req.body.job_content,//内容
         job_createtime: time,//创建时间
         job_updatetime: time,//更新时间
-        job_favour_num: 0,//点赞数    
+        job_favour_num: 0,//点赞数
         job_read_num: 0,//浏览量
-        job_state: 0, //状态  
+        job_state: 0, //状态
         job_istop: 0,//是否置顶
         ispublic: 0,//是否显示
     }
@@ -738,18 +737,18 @@ exports.deletejoin = async (req, res) => {
 exports.createarticle = async (req, res) => {
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        article_id: uuid.v1(),   //id 
-        user_id: req.user.uid,//  用户di 
-        article_title: req.body.article_title,// 标题 
+        article_id: uuid.v1(),   //id
+        user_id: req.user.uid,//  用户di
+        article_title: req.body.article_title,// 标题
         article_introduction: req.body.article_introduction,// 简介
         article_lable: req.body.article_lable,//类型
         article_content: req.body.article_content,//内容
 
         article_createtime: time,//创建时间
         article_updatetime: time,//更新时间
-        article_favour_num: 0,//点赞数    
+        article_favour_num: 0,//点赞数
         article_read_num: 0,//浏览量
-        article_state: 0, //状态  
+        article_state: 0, //状态
         article_istop: 0,//是否置顶
         ispublic: 0,//是否显示
     }
@@ -885,11 +884,11 @@ exports.updateoldstuff = async (req, res) => {
 exports.createfankui = async (req, res) => {
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        fankui_id: uuid.v1(),   //id 
-        fankui_content: req.body.fankui_content,//内容  
-        fankui_user: req.body.fankui_user,//  用户di 
+        fankui_id: uuid.v1(),   //id
+        fankui_content: req.body.fankui_content,//内容
+        fankui_user: req.body.fankui_user,//  用户di
         fankui_createtime: time,//创建时间
-        fankui_state: 0, //状态  
+        fankui_state: 0, //状态
     }
     let sql = 'insert fankui  set ?'
     const result = await query(sql, info)
@@ -903,13 +902,13 @@ exports.createfankui = async (req, res) => {
 exports.createjubao = async (req, res) => {
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        jubao_id: uuid.v1(),   //id 
-        jubao_content: req.body.jubao_content,//内容  
-        jubao_user: req.body.jubao_user,//  用户di 
+        jubao_id: uuid.v1(),   //id
+        jubao_content: req.body.jubao_content,//内容
+        jubao_user: req.body.jubao_user,//  用户di
         jubao_img: req.body.jubao_img,
         jubao_url: req.body.jubao_url,
         jubao_createtime: time,//创建时间
-        jubao_state: 0, //状态  
+        jubao_state: 0, //状态
     }
     let sql = 'insert jubao  set ?'
     const result = await query(sql, info)
@@ -923,12 +922,12 @@ exports.createjubao = async (req, res) => {
 exports.createshensu = async (req, res) => {
     let time = Date.now() - 8 * 60 * 60
     let info = {
-        shensu_id: uuid.v1(),   //id 
-        shensu_content: req.body.shensu_content,//内容  
+        shensu_id: uuid.v1(),   //id
+        shensu_content: req.body.shensu_content,//内容
         shensu_user: req.body.shensu_user,//  用户
         shensu_jubao_id: req.body.shensu_jubao_id,
         shensu_createtime: time,//创建时间
-        shensu_state: 0, //状态  
+        shensu_state: 0, //状态
     }
     let sql = 'insert  shensu  set ?'
     const result = await query(sql, info)

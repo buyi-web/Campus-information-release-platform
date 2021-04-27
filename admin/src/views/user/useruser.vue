@@ -344,6 +344,7 @@ export default {
     },
     //学生认证信息
     changerealstatedialog(user) {
+      console.log(user);
       this.changerealstateuser = JSON.stringify(user);
       this.changerealstateuser = JSON.parse(this.changerealstateuser);
       this.changerealstateuser.studentcard = JSON.parse(

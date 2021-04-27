@@ -58,7 +58,6 @@ export default {
         this.$message.error('账号或者密码为空')
         return
       }
-      console.log(111)
       let obj = {
         password: this.password,
         username: this.username
@@ -70,8 +69,6 @@ export default {
       })
         .then(res => {
           let data = res.data.data
-          console.log(11111)
-          console.log(res.data)
           if (res.data.state.type === 'SUCCESS') {
             this.$message.success('登录成功')
             this.setUserInfo(data.userinfo)

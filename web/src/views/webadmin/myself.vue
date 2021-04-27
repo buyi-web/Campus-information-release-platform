@@ -184,13 +184,14 @@ export default {
     },
     //公司认证
     onSubmitcompany() {
-       this.dataform = JSON.stringify(this.company);
+      this.dataform = JSON.stringify(this.company);
       this.dataform = JSON.parse(this.dataform);
       this.dataform.companyimg = JSON.stringify(this.dataform.companyimg);
       this.studentandcompany();
     },
     //信息认证
     async studentandcompany() {
+      console.log(this.dataform);
       const res = await this.$axios.post(
         "/webadmin/updatauser",
         this.qs.stringify(this.dataform)

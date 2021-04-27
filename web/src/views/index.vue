@@ -6,7 +6,7 @@
         <div class="container">
           <div class="logo-container">
             <!-- Website Logo -->
-            <span style="font-size: 35px;color: white;">buyi</span>
+            <span style="font-size: 35px;color: white;">Buyi</span>
             <span class="tag-line">攀枝花学院信息交流平台</span>
           </div>
           <!-- Start of Main Navigation -->
@@ -113,7 +113,7 @@
     <!-- Start of Search Wrapper -->
     <div class="search-area-wrapper">
       <div class="search-area container">
-        <h3 class="search-header">Buyi Campus Service</h3>
+        <h3 class="search-header">Pzhu Campus Service</h3>
         <!-- <button class="header-btn">发布信息</button> -->
         <p class="search-tag-line" style="margin-top:50px">
           Information sharing and communication platform of PANZHIHUA University
@@ -342,7 +342,7 @@ export default {
           this.$message(e);
         });
     },
-    async getnocitenmu() {     
+    async getnocitenmu() {
           const res = await this.$axios.post(
             "/web/getnotice",
             this.qs.stringify({ num: 1 })
