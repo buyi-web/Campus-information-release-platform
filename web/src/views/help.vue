@@ -43,7 +43,7 @@
                     <a
                       class="iconfont"
                       style="margin-left:50px"
-                    >&#xe688;</a>pzhu哈
+                    >&#xe688;</a>pzhu
                   </span>
                   <span class="like-count">
                       <a class="iconfont">&#xe61c;</a>{{item.help_read_num}}
@@ -63,7 +63,7 @@
              <carousel />
              <oldstuffhot />
           </aside>
-         
+
           <!-- end of sidebar -->
         </div>
       </div>
@@ -126,7 +126,7 @@ export default {
         this.pagelistquery.total = res.data.count;
       }
     },
-         async lablelist() { 
+         async lablelist() {
       let res = await this.$axios.post(
         "/admin/lablelist",
         this.qs.stringify({ lable_name:'问答分类' })

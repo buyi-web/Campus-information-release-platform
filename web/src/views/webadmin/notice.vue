@@ -36,7 +36,7 @@
         <a
           style="font-size:20px"
           @click="changenotice('change',notice.notice_id)"
-          :href="`${url}/#/${notice.router}/${notice.content_id}`"
+          :href="`${url}${notice.router}/${notice.content_id}`"
           target="_blank"
         >{{notice.content_name}}</a>
       </span>

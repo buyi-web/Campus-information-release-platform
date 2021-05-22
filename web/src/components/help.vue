@@ -24,7 +24,7 @@
           <span class="article-meta">
             <a class="iconfont">&#xe619;</a>
             {{ item.createtime | dataFormat }}
-            <a class="iconfont" style="margin-left:50px">&#xe688;</a>pzhu哈
+            <a class="iconfont" style="margin-left:50px">&#xe688;</a>pzhu
           </span>
           <span class="like-count">
             <span class="like-count">

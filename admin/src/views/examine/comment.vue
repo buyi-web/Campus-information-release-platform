@@ -281,14 +281,22 @@ export default {
         id: id,
         type: type
       }
-      let res = await this.$axios.post(
-        '/admin/admindelete',
-        this.qs.stringify(data)
-      )
-      if (res.data.state.type === 'SUCCESS') {
-        this.$message.success('删除成功')
-        this.getcommentlist()
-      }
+        this.$confirm('确认删除吗?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+          this.$axios.post(
+          '/admin/admindelete',
+          this.qs.stringify(data)
+        ).then(res => {
+        if (res.data.state.type === 'SUCCESS') {
+          this.$message.success('删除成功')
+          this.getcommentlist()
+        }
+        })
+
+          })
     },
     async getcommentlist() {
       this.loading = true

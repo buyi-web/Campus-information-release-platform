@@ -131,15 +131,22 @@ export default {
         this.changecarousel(id)
     },
     async deletecarouse(id) {
-      let res = await this.$axios.post(
-        '/admin/deletecarouse',
-        this.qs.stringify(this.carousel[id])
-      )
-      if (res.data.state.type === 'SUCCESS') {
-        this.carousel = res.data.data
-        this.$message.success('删除成功')
-        this.carousellist()
-      }
+       this.$confirm('确认删除吗?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(res => {
+            this.$axios.post(
+            '/admin/deletecarouse',
+            this.qs.stringify(this.carousel[id])
+          ).then(res => {
+              if (res.data.state.type === 'SUCCESS') {
+                this.carousel = res.data.data
+                this.$message.success('删除成功')
+                this.carousellist()
+              }
+          })
+        })
     },
     async carousellist() {
       let res = await this.$axios.post(

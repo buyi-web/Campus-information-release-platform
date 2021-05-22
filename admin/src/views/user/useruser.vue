@@ -312,15 +312,22 @@ export default {
         user_id: row.user_id,
         usertype: "user"
       };
-      let res = await this.$axios.post(
-        "/admin/deleteuser",
-        this.qs.stringify(data)
-      );
-      if (res.data.state.type === "SUCCESS") {
-        this.$message.success("删除成功");
-        this.dialogpw = false;
-        this.getuserlist();
-      }
+        this.$confirm('确认删除吗?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$axios.post(
+            "/admin/deleteuser",
+            this.qs.stringify(data)
+          ).then(res => {
+            if (res.data.state.type === "SUCCESS") {
+              this.$message.success("删除成功");
+              this.dialogpw = false;
+              this.getuserlist();
+            }
+          })
+        })
     },
     //用户状态修改
     async changeuseruserstate(row) {

@@ -178,14 +178,21 @@ export default {
     },
     //删除
     async deletkefu(row) {
-      let res = await this.$axios.post(
-        '/admin/deletekefu',
-        this.qs.stringify({ id: row.shensu_id, type: 'shensu' })
-      )
-      if (res.data.state.type === 'SUCCESS') {
+        this.$confirm('确认删除吗?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(res => {
+          this.$axios.post(
+          '/admin/deletekefu',
+          this.qs.stringify({ id: row.shensu_id, type: 'shensu' })
+        ).then(res => {
+              if (res.data.state.type === 'SUCCESS') {
         this.$message.success('删除成功')
         this.kefulist()
       }
+        })
+      })
     },
     handleSizeChange(val) {
       this.pagelistquery.pagesize = val

@@ -297,14 +297,21 @@ export default {
         user_id: row.user_id,
         usertype: 'admin'
       }
-      let res = await this.$axios.post(
-        '/admin/deleteuser',
-        this.qs.stringify(data)
-      )
-      if (res.data.state.type === 'SUCCESS') {
-        this.$message.success('删除成功')
-        this.getadminlist()
-      }
+        this.$confirm('确认删除吗?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$axios.post(
+            '/admin/deleteuser',
+            this.qs.stringify(data)
+          ).then(res => {
+            if (res.data.state.type === 'SUCCESS') {
+              this.$message.success('删除成功')
+              this.getadminlist()
+            }
+          })
+        })
     },
     handleSizeChange(val) {
       this.pagelistquery.pagesize = val

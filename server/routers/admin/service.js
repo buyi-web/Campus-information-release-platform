@@ -245,7 +245,7 @@ exports.numbering = async (req, res) => {
 FROM
 	information_schema. TABLES
 WHERE
-	TABLE_SCHEMA = 'changhangtong'
+	TABLE_SCHEMA = 'campus'
 `,
     info
   )

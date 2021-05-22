@@ -137,7 +137,6 @@ exports.getusernumbering = async (req, res) => {
 exports.updatauser = async (req, res) => {
     // console.log(req)
     if (req.body.m == "student") {
-
         let info = [
             req.body.realname,
             req.body.studentid,
@@ -200,7 +199,6 @@ exports.updatauser = async (req, res) => {
             }
         }
     }
-
     res.send(data)
 }
 //图片上传

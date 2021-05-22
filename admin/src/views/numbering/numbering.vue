@@ -189,41 +189,43 @@ export default {
           this.orgOptionscomment.xAxis.data.push(element.time)
         })
         this.data.count.forEach(element => {
-          if (element.table_name == 'help') {
-            this.count.push({ name: '交流/问答', value: element.table_rows })
-            this.contentcount = this.contentcount + element.table_rows
+          console.log(element);
+          if (element.TABLE_NAME == 'help') {
+            this.count.push({ name: '交流/问答', value: element.TABLE_ROWS })
+            this.contentcount = this.contentcount + element.TABLE_ROWS
           }
-          if (element.table_name == 'activity') {
-            this.count.push({ name: '活动', value: element.table_rows })
-            this.contentcount = this.contentcount + element.table_rows
+          if (element.TABLE_NAME == 'activity') {
+            this.count.push({ name: '活动', value: element.TABLE_ROWS })
+            this.contentcount = this.contentcount + element.TABLE_ROWS
           }
-          if (element.table_name == 'oldstuff') {
-            this.count.push({ name: '二手', value: element.table_rows })
-            this.contentcount = this.contentcount + element.table_rows
+          if (element.TABLE_NAME == 'oldstuff') {
+            this.count.push({ name: '二手', value: element.TABLE_ROWS })
+            this.contentcount = this.contentcount + element.TABLE_ROWS
           }
-          if (element.table_name == 'job') {
-            this.count.push({ name: '工作', value: element.table_rows })
+          if (element.TABLE_NAME == 'job') {
+            this.count.push({ name: '工作', value: element.TABLE_ROWS })
           }
-          if (element.table_name == 'article') {
-            this.count.push({ name: '文章新闻', value: element.table_rows })
-            this.contentcount = this.contentcount + element.table_rows
+          if (element.TABLE_NAME == 'article') {
+            this.count.push({ name: '文章新闻', value: element.TABLE_ROWS })
+            this.contentcount = this.contentcount + element.TABLE_ROWS
           }
-          if (element.table_name == 'comment') {
-            this.commentcount = this.commentcount + element.table_rows
+          if (element.TABLE_NAME == 'comment') {
+            this.commentcount = this.commentcount + element.TABLE_ROWS
           }
-          if (element.table_name == 'reply') {
-            this.commentcount = this.commentcount + element.table_rows
+          if (element.TABLE_NAME == 'reply') {
+            this.commentcount = this.commentcount + element.TABLE_ROWS
           }
-          if (element.table_name == 'user') {
-            this.usercount = this.usercount + element.table_rows
+          if (element.TABLE_NAME == 'user') {
+            this.usercount = this.usercount + element.TABLE_ROWS
           }
         })
-
+        console.log(this.count)
         this.count.forEach(element => {
           this.optioncontentshadow.series[0].data.push(element.value)
           this.optioncontentpie.series[0].data.push(element)
           this.optioncontentshadow.xAxis[0].data.push(element.name)
         })
+
       }
     }
   },
